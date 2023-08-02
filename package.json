@@ -1,0 +1,46 @@
+{
+	"name": "nuxt-app",
+	"private": true,
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"postinstall": "nuxt prepare"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.20.7",
+		"@babel/eslint-parser": "^7.19.1",
+		"@nuxt/devtools": "latest",
+		"@nuxt/eslint-config": "^0.1.1",
+		"@types/node": "^18.17.1",
+		"eslint": "^8.30.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-vue": "^9.8.0",
+		"nuxt": "^3.6.5",
+		"nuxt-delay-hydration": "^1.1.4",
+		"vite-plugin-stylelint": "^4.1.4"
+	},
+	"dependencies": {
+		"@pinia/nuxt": "^0.4.6",
+		"cookie": "^0.5.0",
+		"nuxt-basic-auth": "^1.0.2",
+		"pinia": "^2.0.28",
+		"prettier-eslint": "^15.0.1",
+		"sass": "^1.57.1",
+		"set-cookie-parser": "^2.6.0",
+		"socket.io": "^4.7.1",
+		"socket.io-client": "^4.7.1",
+		"stylelint": "^14.16.1",
+		"stylelint-at-rule-no-children": "^0.3.1",
+		"stylelint-config-prettier": "^9.0.4",
+		"stylelint-config-recommended": "^9.0.0",
+		"stylelint-config-recommended-scss": "^8.0.0",
+		"stylelint-config-recommended-vue": "^1.4.0",
+		"stylelint-declaration-block-no-ignored-properties": "^2.6.0",
+		"stylelint-order": "^5.0.0",
+		"stylelint-scss": "^4.3.0",
+		"vite-plugin-eslint": "^1.8.1",
+		"vuesp-npm": "^0.0.6"
+	}
+}
