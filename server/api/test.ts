@@ -1,26 +1,17 @@
 import { defineEventHandler } from 'h3';
 import { Server } from 'socket.io';
 
-import { VuespDevices } from 'vuesp-npm';
-
-console.log(VuespDevices);
+import { VuespDevices } from '/home/brg/github/vuesp-npm/build/index';
 
 const devices = [
-	{
-		ip: '192.168.10.19',
-		username: 'admin',
-		password: 'admin',
-	},
-	{
-		ip: '192.168.10.19',
-		username: 'admin',
-		password: 'admin',
-	},
+	{ ip: '192.168.10.29', username: 'admin', password: 'admin' },
+	{ ip: '192.168.10.19', username: 'admin', password: 'admin' },
 ];
 
 const vuespDevices = new VuespDevices(devices);
-
 const io = new Server(3002, { cors: { origin: '*' } });
+
+vuespDevices.connection();
 
 io.on('connection', (socket) => {
 	console.log('Connection', socket.id);
@@ -28,8 +19,8 @@ io.on('connection', (socket) => {
 
 io.on('connect', (socket) => {
 	console.log('socket.id: ' + socket.id);
-
 	socket.emit('message', `welcome ${socket.id}`);
+	socket.emit('init', true);
 	socket.broadcast.emit('message', `${socket.id} joined`);
 
 	socket.on('message', function message(data: any) {
@@ -43,17 +34,10 @@ io.on('connect', (socket) => {
 	});
 });
 
-vuespDevices.connection();
-vuespDevices.on('message', (payload: any) => {
-	// console.log(payload);
-	io.emit('message', payload);
-});
+vuespDevices.on('*', (payload: any) => io.emit('*', payload));
 
 export default defineEventHandler((event) => {
-	console.log('sdsdsdsd');
 	const { method, url, headers } = event.req;
 	console.log(method, url);
-	return {
-		hello: 'world',
-	};
+	return { hello: 'world' };
 });

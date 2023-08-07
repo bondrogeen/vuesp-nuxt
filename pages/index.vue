@@ -11,7 +11,7 @@
           nibh id proin id et nascetur sed. Dolor consequat -->
 				</div>
 				<div>
-					<v-button class="mr-2" @click="onClick">More</v-button>
+					<v-button class="mr-2">More</v-button>
 				</div>
 			</div>
 		</div>
@@ -19,36 +19,36 @@
 </template>
 
 <script setup>
-import { defineProps, onMounted } from 'vue';
+// import { defineProps, onMounted } from 'vue';
 // import { storeToRefs } from 'pinia';
 // import { useWebSocketStore } from '@/stores/WebSocketStore';
-import { io } from 'socket.io-client';
+// import { io } from 'socket.io-client';
 
 // const webSocketStore = useWebSocketStore();
 // const { settings } = storeToRefs(webSocketStore);
 
-onMounted(() => {
-	const socket = io('http://localhost:3002', {
-		reconnectionDelay: 1000,
-		reconnection: true,
-		// reconnectionAttemps: 10,
-		transports: ['websocket'],
-		// agent: false,
-		// upgrade: false,
-		// rejectUnauthorized: false,
-	});
-	// webSocketStore.onSend('SETTINGS');
-	socket.on('message', (e) => {
-		console.log(e);
-	});
-});
+// onMounted(() => {
+// 	const socket = io('http://localhost:3002', {
+// 		reconnectionDelay: 1000,
+// 		reconnection: true,
+// 		// reconnectionAttemps: 10,
+// 		transports: ['websocket'],
+// 		// agent: false,
+// 		// upgrade: false,
+// 		// rejectUnauthorized: false,
+// 	});
+// 	// webSocketStore.onSend('SETTINGS');
+// 	socket.on('message', (e) => {
+// 		console.log(e);
+// 	});
+// });
 
 //Socket Client
 
-const onClick = (e) => {
-	console.log(e);
-	s.emit('message', 'new message sent');
-};
+// const onClick = (e) => {
+// 	console.log(e);
+// 	s.emit('message', 'new message sent');
+// };
 </script>
 
 <style lang="scss">

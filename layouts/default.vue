@@ -64,10 +64,10 @@ provide('dialog', appStore.setDialog);
 // 	socket.value = instance;
 // };
 
-// const onClose = () => {
-// 	drawer.value = false;
-// 	dialog.value = {};
-// };
+const onClose = () => {
+	drawer.value = false;
+	dialog.value = {};
+};
 
 onMounted(() => {
 	// ping = setInterval(webSocket.onPing, 1000);
